@@ -1,4 +1,4 @@
-# vue-demo-1
+# vue-demo
 
 > A Vue.js project
 
@@ -26,5 +26,8 @@ npm run e2e
 # run all tests
 npm test
 ```
+##规范
+统一出入口，每个文件夹有一个index.js输出所有
+
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -1,6 +1,13 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <!-- <h1>{{ msg }}</h1> -->
+    <h2>demo测试</h2>
+    <ul>
+      <li @click="goOther('/editor')">
+        富文本编辑器: vue-quill-editor
+      </li>j
+
+    </ul>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -90,6 +97,12 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods:{
+    goOther(path){
+      this.$router.push(path)
+    }
+
   }
 }
 </script>

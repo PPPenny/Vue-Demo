@@ -1,15 +1,17 @@
 <template>
-  <div>
+  <div class="page-content">
     <quill-editor
       :content="content"
       :options="editorOption"
       @change="onEditorChange($event)"
     >
     </quill-editor>
-    <van-button @click="clickPreCheck">预览</van-button>
+    <van-button @click="clickPreCheck" type="primary">预览</van-button>
     <van-popup
       v-model="showPreHtml"
       class="pre-popup"
+       position="top"
+       transition="el-fade-in"
       :overlay="false"
       @click.native="handleTipsClick"
     >
@@ -22,15 +24,17 @@
   </div>
 </template>
 <script>
+import Vue from 'vue'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import {quillEditor} from 'vue-quill-editor'
-import HtmlLazyload from '@/components/html-lazyload.vue'
+import { Button, Popup } from 'vant';
+Vue.use(Popup);
+Vue.use(Button);
 export default {
   components: {
-    quillEditor,
-    HtmlLazyload
+    quillEditor
   },
   data() {
     return {
@@ -80,11 +84,16 @@ export default {
 }
 </script>
 <style lang="less">
+// .page-content{
+//   height: 100%;
+//   width: 100%;
+//   overflow: scroll;
+//   -webkit-overflow-scrolling: touch;
+  
 .pre-popup {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 30px;
 
   .pre-content {
     background: #fff;
@@ -115,4 +124,7 @@ export default {
     }
   }
 }
+
+// }
+
 </style>

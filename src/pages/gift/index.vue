@@ -9,19 +9,36 @@
       </div>
     </div>
     <div class="showTxt">{{msg}}</div>
+    <v-countdown
+        :startTime="startTime"
+        :autoplay="true"
+      >
+        <template slot-scope="props">
+          {{ countdownFormat(props) }}
+        </template>
+      </v-countdown>
   </div>
 </template>
 <script>
 import {GIFT_DATA} from '../../const/gift'
 import { setTimeout } from 'timers';
+import VCountdown from '@femessage/v-countdown'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+dayjs.extend(relativeTime)
 // 选择圈数
 const TIMES = 4
 export default {
+  components:{
+     VCountdown
+  },
+
   data() {
     return {
       msg: "",
       allLength:GIFT_DATA.length,
-      styles:''
+      styles:'',
+      startTime:'2020-08-27 00:00:00',
     };
   },
   methods: {
@@ -50,7 +67,17 @@ export default {
         },0)
 
 
-    }
+    },
+    //时间倒计时
+    countdownFormat() {
+      const startTime = dayjs(this.startTime)
+      const time = startTime.diff(dayjs())
+      const day = parseInt(time / 1000 / 60 / 60 / 24)
+      const hour = parseInt(time / 1000 / 60 / 60) % 24
+      const min = parseInt(time / 1000 / 60) % 60
+      const sec = parseInt(time / 1000) % 60
+      return `${day}天${hour}时${min}分${sec}秒`
+    },
   }
 };
 </script>

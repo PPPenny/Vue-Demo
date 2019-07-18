@@ -14,6 +14,7 @@
 <script>
 import {GIFT_DATA} from '../../const/gift'
 import { setTimeout } from 'timers';
+// 选择圈数
 const TIMES = 4
 export default {
   data() {
@@ -24,12 +25,15 @@ export default {
     };
   },
   methods: {
+    //   获取度数
     perRato(){
       return 360/this.allLength
     },
+    // 获取索引
     getIndex(){
        return parseInt(Math.random() * this.allLength)
     },
+    // 开始旋转
     start() {
         this.styles = ""
         this.msg=""  

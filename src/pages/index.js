@@ -1,8 +1,10 @@
 import  HelloWorld  from './HelloWorld';
 import Editor from './Editor.vue';
+import Gift from './gift'
 const components =[
     HelloWorld,
-    Editor
+    Editor,
+    Gift
 ]
 
 const install = function(Vue) {
@@ -16,4 +18,4 @@ const install = function(Vue) {
   if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
   }
-export { HelloWorld,Editor }
+export { HelloWorld,Editor,Gift}

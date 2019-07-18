@@ -5,7 +5,10 @@
     <ul>
       <li @click="goOther('/editor')">
         富文本编辑器: vue-quill-editor
-      </li>j
+      </li>
+      <li @click="goOther('/gift')">
+        转盘
+      </li>
 
     </ul>
     <h2>Essential Links</h2>

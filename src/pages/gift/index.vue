@@ -24,8 +24,6 @@ import {GIFT_DATA} from '../../const/gift'
 import { setTimeout } from 'timers';
 import VCountdown from '@femessage/v-countdown'
 import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
-dayjs.extend(relativeTime)
 // 选择圈数
 const TIMES = 4
 export default {

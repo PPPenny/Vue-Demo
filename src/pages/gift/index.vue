@@ -20,8 +20,7 @@
   </div>
 </template>
 <script>
-import {GIFT_DATA} from '../../const/gift'
-import { setTimeout } from 'timers';
+import {GIFT_DATA} from '@/const/gift'
 import VCountdown from '@femessage/v-countdown'
 import dayjs from 'dayjs'
 // 选择圈数

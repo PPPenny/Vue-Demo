@@ -9,25 +9,29 @@
       </div>
     </div>
     <div class="showTxt">{{msg}}</div>
-    <v-countdown
+    <!-- <v-countdown
         :startTime="startTime"
         :autoplay="true"
       >
         <template slot-scope="props">
-          {{ countdownFormat(props) }}
+         距离双十一剩余： {{ countdownFormat(props) }}
         </template>
-      </v-countdown>
+      </v-countdown> -->
+      <!-- <count-down :seconds="creatSeconds()">
+        <template slot-scope="props">
+         距离双十一剩余： {{ countdownFormat(props) }}
+        </template>
+      </count-down> -->
   </div>
 </template>
 <script>
 import {GIFT_DATA} from '@/const/gift'
-import VCountdown from '@femessage/v-countdown'
-import dayjs from 'dayjs'
+// import CountDown from '@femessage/count-down'
 // 选择圈数
 const TIMES = 4
 export default {
   components:{
-     VCountdown
+    //  CountDown
   },
 
   data() {
@@ -35,7 +39,7 @@ export default {
       msg: "",
       allLength:GIFT_DATA.length,
       styles:'',
-      startTime:'2020-08-27 00:00:00',
+      startTime:'2019-11-11 00:00:00',
     };
   },
   methods: {
@@ -65,16 +69,21 @@ export default {
 
 
     },
-    //时间倒计时
-    countdownFormat() {
-      const startTime = dayjs(this.startTime)
-      const time = startTime.diff(dayjs())
-      const day = parseInt(time / 1000 / 60 / 60 / 24)
-      const hour = parseInt(time / 1000 / 60 / 60) % 24
-      const min = parseInt(time / 1000 / 60) % 60
-      const sec = parseInt(time / 1000) % 60
-      return `${day}天${hour}时${min}分${sec}秒`
+    // 设计倒计时
+    creatSeconds(){
+      return (new Date(this.startTime).getTime() - Date.now()) / 1000
     },
+
+    //时间倒计时
+    // countdownFormat(props) {
+    //   const startTime = dayjs(this.startTime)
+    //   const time = startTime.diff(dayjs())
+    //   const day = parseInt(time / 1000 / 60 / 60 / 24)
+    //   const hour = parseInt(time / 1000 / 60 / 60) % 24
+    //   const min = parseInt(time / 1000 / 60) % 60
+    //   const sec = parseInt(time / 1000) % 60
+    //   return `${day}天${hour}时${min}分${sec}秒`
+    // },
   }
 };
 </script>

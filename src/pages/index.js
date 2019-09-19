@@ -1,10 +1,12 @@
-import  HelloWorld  from './HelloWorld';
-import Editor from './Editor.vue';
+import  HelloWorld  from './HelloWorld'
+import Editor from './Editor'
 import Gift from './gift'
+import Animate from './Animate'
 const components =[
     HelloWorld,
     Editor,
-    Gift
+    Gift,
+    Animate
 ]
 
 const install = function(Vue) {
@@ -18,4 +20,4 @@ const install = function(Vue) {
   if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
   }
-export { HelloWorld,Editor,Gift}
+export { HelloWorld,Editor,Gift,Animate}

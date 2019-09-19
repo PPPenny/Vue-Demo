@@ -30,11 +30,12 @@ import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import {quillEditor} from 'vue-quill-editor'
 import { Button, Popup } from 'vant';
-Vue.use(Popup);
-Vue.use(Button);
+
 export default {
   components: {
-    quillEditor
+    quillEditor,
+    'van-popup':Popup,
+    'van-button':Button
   },
   data() {
     return {

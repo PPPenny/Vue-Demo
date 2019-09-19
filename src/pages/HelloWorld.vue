@@ -9,6 +9,9 @@
       <li @click="goOther('/gift')">
         转盘
       </li>
+        <li @click="goOther('/animate')">
+        lottie动画
+      </li>
 
     </ul>
     <h2>Essential Links</h2>

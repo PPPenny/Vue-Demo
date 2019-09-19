@@ -5,6 +5,7 @@
  * @LastEditTime: 2019-07-17 13:57:30
  * @LastEditors: your name
  -->
+
 <template>
   <div class="gift-page">
     <div class="gift" @click="start">
@@ -74,9 +75,7 @@ export default {
     },
 
     //时间倒计时
-    countdownFormat(props) {
-      console.log(props)
-     const {days,hours,minutes,seconds} = props
+    countdownFormat({days,hours,minutes,seconds}) {
       return `${days}天${hours}时${minutes}分${seconds}秒`
     },
   }

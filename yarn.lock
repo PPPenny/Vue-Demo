@@ -143,10 +143,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@femessage/count-down@^0.2.2":
-  version "0.2.2"
-  resolved "http://levy.ren:4873/@femessage%2fcount-down/-/count-down-0.2.2.tgz#f8d0d916978135d1008b3b23ebe75fbe30fc4f06"
-  integrity sha512-oHnFYIXJcnolSrrZkirZ+ns/QxWPgcavUcZJowG9DSzz/Hk3B2x0F+yCgkCAAEnw2mhUgHJfeaClDkQdGnMhMg==
+"@femessage/count-down@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@femessage/count-down/-/count-down-1.0.3.tgz#a70e14b2ed67dc4857cc353eade8536febd26011"
+  integrity sha512-gzY3qwO50IE0HfXzpDnE/JIR41lt6dsgh2ImRp4uuC5dui4b/DA1fzyDvkEbrwgPVinoZCmg7/iKAsLJygfLeg==
 
 "@types/node@^8.0.7":
   version "8.10.51"

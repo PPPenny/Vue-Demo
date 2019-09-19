@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-17 16:20:59
- * @LastEditTime: 2019-09-19 16:37:50
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2019-09-17 16:20:59
+ * @LastEditors: your name
  -->
 <template>
   <div class="page-content">
@@ -31,7 +31,6 @@ export default {
     handleClick() {
       // 第一种
       // this.anim.play()
-      // console.log(this.anim)
       // setTimeout(() => {
       //   this.stopAnimate()
       // }, 2000);

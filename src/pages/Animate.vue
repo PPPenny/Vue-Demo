@@ -15,14 +15,13 @@
 import lottie from "lottie-web";
 import Run from "./run.json";
 export default {
+  head(){
+    return {
+      title:'动画页面'
+    }
+  },
   mounted() {
-    this.anim = lottie.loadAnimation({
-      container: this.$refs.animation,
-      renderer: "svg",
-      loop: true,
-      autoplay: false,
-      animationData: Run, //动画json
-    });
+      this.getRunData()
   },
   methods: {
     stopAnimate() {
@@ -36,14 +35,22 @@ export default {
       // }, 2000);
       // 第二种
       // 播放0-30帧动画，以为已经知道有30帧了的
-      this.anim.playSegments([0,30], false); 
-      // this.anim.play()
+      // this.anim.playSegments([0,30], false); 
+      // 监听已经播放一轮后停止播放
+      this.anim.play()
       this.anim.addEventListener('loopComplete',()=>{
         this.stopAnimate()
       })
-      
-
-      
+    },
+    async getRunData(){
+      const {data} = await this.axios.get('http://39.100.141.76:3000/mock/935/run')
+         this.anim = lottie.loadAnimation({
+      container: this.$refs.animation,
+      renderer: "svg",
+      loop: true,
+      autoplay: false,
+      animationData: data //动画json
+    })
     }
   }
 };
